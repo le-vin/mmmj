@@ -1,2 +1,28 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div id="banner">
+  <div id="back">
+  </div>
+  <div id="header" class="card-origin ml-1 mr-1">
+    <h1 id="one"><strong>MAXLS UND MIRIS</strong></h1>
+    <h1 id="two"> <i>Maulungsjubiläum</i></h1>
+  </div>
+</div>
+
+<div class="card-origin mt-4 mb-3 ml-2 mr-2 p-2">
+  <h2 class="fonttwo"><i>Glückwünsche</i></h2>
+  <p class="fontone">Es ist nun eure Chance Grüße an die Beiden auszurichten!</p>
+</div>
+
+<div class="text">
+  <%= link_to "Glückwunsch erstellen", new_greeting_path, class:"button mt-3 mb-5 ml-2 mr-2 p-2" %>
+</div>
+
+<div class="text mt-5 mb-4">
+  <% count = Greeting.count %>
+  <h2><%= count %> Glückwünsche</h2>
+</div>
+<% Greeting.all.each do |greet| %>
+<div class="card-origin mt-3 mb-3 ml-2 mr-2 p-2">
+  <h3 class="fonttwo"><i><%= greet.name %></i></h3>
+  <p class="fontone"><%= greet.content %></p>
+</div>
+<% end %>

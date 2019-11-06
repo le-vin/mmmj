@@ -1,0 +1,7 @@
+<div class="form-inputs form-wrapper card-origin text-center p-5 mb-5" style=" margin: 20px 10px;">
+<%= simple_form_for [@greeting = Greeting.new] do |f| %>
+  <%= f.input :name, class:"round" %>
+  <%= f.input :content, :input_html => {:rows => 10}, class:"round"%>
+  <%= f.submit "Send", class: 'button'%>
+<% end %>
+</div>
